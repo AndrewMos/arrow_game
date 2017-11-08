@@ -1,0 +1,42 @@
+<html>
+<meta charset="utf-8">
+<title>KitikGame</title>
+<style>
+#stage {
+  width: 500px;
+  height: 650px;
+  position: relative;
+}
+#back {
+  width: 500px;
+  height: 650px;
+  position: absolute;
+  background-image: url(pic/back.png);
+}
+#paw {
+  width: 250px;
+  height: 300px;
+  top: 350px;
+  left: -30px;
+  position: absolute;
+  background-image: url(pic/kitik.gif);
+  transition: left 1.5s linear 0s;
+}
+</style>
+
+<div id="stage">
+  <div id="back"/>
+  <div id="paw"/>
+</div>
+
+
+<script>
+var kitik = document.querySelector("#paw");
+window.addEventListener("click", something, false);
+function something(event) {
+  console.log(event);
+kitik.style.left = event.clientX - 10 + "px";
+}
+</script>
+
+</html>
