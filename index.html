@@ -77,6 +77,24 @@ background: linear-gradient(top, #858565, #c5c9a9);
 <button>guess</button>
 <script>
 
+window.addEventListener('load', function(e) {
+
+  window.applicationCache.addEventListener('updateready', function(e) {
+    if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+      // Browser downloaded a new app cache.
+      // Swap it in and reload the page to get the new hotness.
+      window.applicationCache.swapCache();
+      if (confirm('A new version of this site is available. Load it?')) {
+        window.location.reload();
+      }
+    } else {
+      // Manifest didn't changed. Nothing new to server.
+    }
+  }, false);
+
+}, false);
+
+
 var mysteryNumber = Math.floor(Math.random() * 100);
 console.log(mysteryNumber);
 var playersGuess = 0;
@@ -129,7 +147,7 @@ function playGame()
   arrow.style.left = playersGuess * 3 + "px";
   if(playersGuess > mysteryNumber)
   {
-    output.innerHTML = "That's too high." + gameState;
+    output.innerHTML = "That's too high." + gameState +" Also I love Kitik";
 
     if (guessesRemaining < 1)
     {
@@ -138,7 +156,7 @@ function playGame()
   }
   else if(playersGuess < mysteryNumber)
   {
-    output.innerHTML = "That's too low." + gameState;
+    output.innerHTML = "That's too low." + gameState + " Also I love Kitik";
 
     if (guessesRemaining < 1)
     {
@@ -158,13 +176,13 @@ function endGame()
   {
 output.innerHTML
       = "Yes, it's " + mysteryNumber + "!" + "<br>"
-      + "It only took you " + guessesMade + " guesses.";
+      + "It only took you " + guessesMade + " guesses." + " Also I love Kitik";
   }
   else
   {
     output.innerHTML
       = "No more guesses left!" + "<br>"
-      + "The number was: " + mysteryNumber + ".";
+      + "The number was: " + mysteryNumber + "." + " Also I love Kitik" ;
   }
 
   button.removeEventListener("click", clickHandler, false);
