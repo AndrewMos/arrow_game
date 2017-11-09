@@ -2,25 +2,35 @@
 <meta charset="utf-8">
 <title>KitikGame</title>
 <style>
+
+body {
+    background-color: #220099;
+}
+
 #stage {
-  width: 500px;
-  height: 650px;
+  width: 800px;
+  height: 550px;
+  display: block;
+   margin: 0 auto;
+     margin-top: 30px;
   position: relative;
+  box-shadow: 10px 10px 5px grey;
 }
 #back {
-  width: 500px;
-  height: 650px;
+  width: 800px;
+  height: 550px;
   position: absolute;
   background-image: url(pic/back.png);
 }
 #paw {
+
   width: 250px;
   height: 300px;
-  top: 350px;
+  top: 250px;
   left: -30px;
   position: absolute;
   background-image: url(pic/kitik.gif);
-  transition: left 1.5s linear 0s;
+  transition: left 0.3s linear 0.2s;
 }
 </style>
 
@@ -31,11 +41,19 @@
 
 
 <script>
+let posX = -30;
 var kitik = document.querySelector("#paw");
-window.addEventListener("click", something, false);
+window.addEventListener("keydown", something, false);
 function something(event) {
   console.log(event);
-kitik.style.left = event.clientX - 10 + "px";
+  if (event.key == "ArrowRight"){
+  posX += 50;
+}
+if (event.key == "ArrowLeft"){
+posX -= 50;
+}
+
+kitik.style.left =  posX + "px";
 }
 </script>
 
