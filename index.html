@@ -63,7 +63,11 @@ body {
 <script>
 let posX = -30;
 var kitik = document.querySelector("#paw");
-$( "#andrew" ).draggable();
+
+$( "#paw" ).draggable({
+  axis: "x"
+});
+    /*
 window.addEventListener("keydown", something, false);
 function something(event) {
   console.log(event);
@@ -75,7 +79,7 @@ posX -= 200;
 }
 
 kitik.style.left =  posX + "px";
-}
+} */
 </script>
 
 </html>
