@@ -63,8 +63,17 @@ body {
 let posX = -30;
 var kitik = document.querySelector("#paw");
 
-$( "#paw" ).draggable({
-  axis: "x"
+
+$(kitik).draggable({
+  axis: "x",
+  distance: 3,
+  snap: true,
+    drag:function(event, ui){
+      if ((ui.position.left) + 20 <= 0){
+        ui.position.left = -19; }
+      if ((ui.position.left) + 220 >= 800){
+        ui.position.left = 579; }
+    }
 });
     /*
 window.addEventListener("keydown", something, false);
