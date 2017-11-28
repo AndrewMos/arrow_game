@@ -1,0 +1,16 @@
+body {
+  background-image: url(back.jpg);
+   margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stage {
+  background-color: #e1e1e1;
+  width: 800px;
+  height: 550px;
+   margin: 0;
+  
+  box-shadow: 5px 15px 20px rgba(0, 0, 0, 0.3);
+}
