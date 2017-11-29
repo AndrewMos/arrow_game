@@ -34,7 +34,7 @@ stage.style.width = "800px";
 stage.style.height = "500px";
 var canvas  = createCanvas(parseInt(stage.style.width), parseInt(stage.style.height));
 canvas.parent(stage);
-frameRate(27);
+frameRate(55);
 arrows[0] = new Arrow(Math.floor(random(0,4)));
 }
 
